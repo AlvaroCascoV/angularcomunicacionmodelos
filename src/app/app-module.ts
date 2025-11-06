@@ -7,9 +7,11 @@ import { MenuComponent } from './components/menu.component/menu.component';
 import { appRoutingProvider, routing } from './app.routing';
 import { HijoCocheComponent } from './components/hijo.coche.component/hijo.coche.component';
 import { PadreCochesComponent } from './components/padre.coches.component/padre.coches.component';
+import { PadreDeportesComponent } from './components/padre.deportes.component/padre.deportes.component';
+import { HijoDeporteComponent } from './components/hijo.deporte.component/hijo.deporte.component';
 
 @NgModule({
-  declarations: [App, ListaProductosComponent, MenuComponent, HijoCocheComponent, PadreCochesComponent],
+  declarations: [App, ListaProductosComponent, MenuComponent, HijoCocheComponent, PadreCochesComponent, PadreDeportesComponent, HijoDeporteComponent],
   imports: [BrowserModule, routing],
   providers: [provideBrowserGlobalErrorListeners(), appRoutingProvider],
   bootstrap: [App],
