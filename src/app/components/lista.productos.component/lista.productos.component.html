@@ -1,0 +1,9 @@
+<div>
+  <h1>Lista de productos</h1>
+  @for (prod of productos; track prod; let i = $index) {
+  <div>
+    <h2 style="color: blue">{{ prod.nombre }}, {{ prod.precio }} €</h2>
+    <img src="{{ prod.imagen }}" style="width: 150px; height: 150px" />
+  </div>
+  }
+</div>
