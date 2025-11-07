@@ -9,9 +9,15 @@ import { Comic } from '../../models/comic';
 })
 export class ComicComponent {
   @Input() comic!: Comic;
+  @Input() index!: number;
   @Output() seleccionarFav: EventEmitter<any> = new EventEmitter<any>();
+  @Output() borrarComic: EventEmitter<any> = new EventEmitter<any>();
 
   marcarFavorito(): void {
     this.seleccionarFav.emit(this.comic);
+  }
+
+  eliminarComic(): void {
+    this.borrarComic.emit(this.index);
   }
 }

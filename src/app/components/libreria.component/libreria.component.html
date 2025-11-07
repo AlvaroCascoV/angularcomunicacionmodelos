@@ -1,12 +1,26 @@
 <div>
   <h1>Libreria Comics</h1>
+  <form #comicForm="ngForm">
+    <label>Titulo</label>
+    <input type="text" name="cajatitulo" #cajatitulo />
+    <label>Descripcion</label>
+    <input type="text" name="cajadescripcion" #cajadescripcion />
+    <label>Imagen</label>
+    <input type="text" name="cajaimagen" #cajaimagen />
+    <button (click)="createComic()">Nuevo Comic</button>
+  </form>
   @if (comicFavorito) {
   <div style="background-color: lightcyan">
     <h2 style="color: fuchsia">{{ comicFavorito.titulo }}</h2>
     <h3 style="color: blueviolet">{{ comicFavorito.descripcion }}</h3>
     <img src="{{ comicFavorito.imagen }}" style="width: 100px; height: 120px" /><br />
   </div>
-  } @for (c of comics; track c) {
-  <app-comic [comic]="c" (seleccionarFav)="seleccionarFavorito($event)"></app-comic>
+  } @for (c of comics; track c; let i = $index) {
+  <app-comic
+    [comic]="c"
+    [index]="i"
+    (seleccionarFav)="seleccionarFavorito($event)"
+    (borrarComic)="deleteComic($event)"
+  ></app-comic>
   }
 </div>
