@@ -2,12 +2,12 @@
   <h1>Libreria Comics</h1>
   <form #comicForm="ngForm">
     <label>Titulo</label>
-    <input type="text" name="cajatitulo" #cajatitulo />
+    <input type="text" name="cajatitulo" #cajatitulo class="form-control" />
     <label>Descripcion</label>
-    <input type="text" name="cajadescripcion" #cajadescripcion />
+    <input type="text" name="cajadescripcion" #cajadescripcion class="form-control" />
     <label>Imagen</label>
-    <input type="text" name="cajaimagen" #cajaimagen />
-    <button (click)="createComic()">Nuevo Comic</button>
+    <input type="text" name="cajaimagen" #cajaimagen class="form-control" />
+    <button (click)="createComic()" class="btn btn-success">Nuevo Comic</button>
   </form>
   @if (comicFavorito) {
   <div style="background-color: lightcyan">
