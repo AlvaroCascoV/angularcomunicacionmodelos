@@ -8,7 +8,13 @@ import { Comic } from '../../models/comic';
   styleUrl: './libreria.component.css',
 })
 export class LibreriaComponent {
-  public comics;
+  public comics: Array<Comic>;
+  public comicFavorito!: Comic;
+
+  seleccionarFavorito(favorito: Comic): void {
+    this.comicFavorito = favorito;
+  }
+
   constructor() {
     this.comics = [
       new Comic(
@@ -23,7 +29,7 @@ export class LibreriaComponent {
       ),
       new Comic(
         'Guardianes de la Galaxia',
-        'https://cdn.normacomics.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/u/guardianes_galaxia_guadianes_infinito.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/d/df/C2E2_2016_Contest_-_Groot_%2834170224005%29.jpg',
         'Yo soy Groot'
       ),
       new Comic(

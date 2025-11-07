@@ -1,4 +1,12 @@
 <div>
-  <h1>Padre libreeria</h1>
-  <app-comic></app-comic>
+  <h1>Libreria Comics</h1>
+  @if (comicFavorito) {
+  <div style="background-color: lightcyan">
+    <h2 style="color: fuchsia">{{ comicFavorito.titulo }}</h2>
+    <h3 style="color: blueviolet">{{ comicFavorito.descripcion }}</h3>
+    <img src="{{ comicFavorito.imagen }}" style="width: 100px; height: 120px" /><br />
+  </div>
+  } @for (c of comics; track c) {
+  <app-comic [comic]="c" (seleccionarFav)="seleccionarFavorito($event)"></app-comic>
+  }
 </div>
