@@ -12,6 +12,7 @@ import { HijoDeporteComponent } from './components/hijo.deporte.component/hijo.d
 import { ComicComponent } from './components/comic.component/comic.component';
 import { LibreriaComponent } from './components/libreria.component/libreria.component';
 import { FormsModule } from '@angular/forms';
+import { ServiceComics } from './services/service.comics';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     LibreriaComponent,
   ],
   imports: [BrowserModule, routing, FormsModule],
-  providers: [provideBrowserGlobalErrorListeners(), appRoutingProvider],
+  //DEBEMOS DECLARAR EL SERVICIO PARA PODER RECUPERARLO DENTRO DE OTROS COMPONENTS
+  providers: [provideBrowserGlobalErrorListeners(), appRoutingProvider, ServiceComics],
   bootstrap: [App],
 })
 export class AppModule {}
